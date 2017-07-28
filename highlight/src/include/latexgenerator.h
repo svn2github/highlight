@@ -80,6 +80,16 @@ public:
         prettySymbols = b;
     }
 
+    /** set Beamer mode  flag
+       \param b flag
+    */
+    void setLATEXBeamerMode ( bool b )
+    {
+       beamerMode = b;
+       newLineTag = beamerMode ? "\n\n" : "\\\\\n";
+       longLineTag = "\\hspace*{\\fill}" + newLineTag;
+    }
+
 private:
 
     /** prints document header
@@ -113,7 +123,9 @@ private:
 
     /** test if symbols like <,>,{,},~ should be replaced by nicer definitions */
     bool prettySymbols;
-
+    
+    bool beamerMode;
+    
     string getNewLine();
 
     string getStyleDefinition();

@@ -136,6 +136,7 @@ private slots:
     void on_pbLATEXChooseStyleIncFile_clicked();
     void on_pbHTMLChooseStyleIncFile_clicked();
     void on_pbSVGChooseStyleIncFile_clicked();
+    void on_pbCopyAndPaste_clicked();
 
     void on_action_License_triggered();
     void on_action_Changelog_triggered();
@@ -152,6 +153,7 @@ private slots:
     void on_pbPluginReadFilePath_clicked();
 
     void on_lvPluginScripts_currentRowChanged(int currentRow);
+    void on_pbBrowseOutDir_clicked();
 };
 
 #endif // MAINWINDOW_H
