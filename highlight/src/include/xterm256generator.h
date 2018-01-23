@@ -2,7 +2,7 @@
                        xterm256generator.h  -  description
                              -------------------
     begin                : Oct 13 2006
-    copyright            : (C) 2006-2007 by Andre Simon
+    copyright            : (C) 2006-2018 by Andre Simon
     email                : andre.simon1@gmx.de
  ***************************************************************************/
 
@@ -52,7 +52,13 @@ public:
     Xterm256Generator();
     ~Xterm256Generator();
 
-    void setESCTrueColor(bool b) { use16mColours = b; } 
+    
+    /** @param b toggle truecolor mode */
+    void setESCTrueColor(bool b);
+    
+    
+    /** @param p initial canvas width (0 to disable) */
+    void setESCCanvasPadding(unsigned int p);
     
 private:
 
@@ -84,6 +90,9 @@ private:
         @return matching sequence to close element formatting*/
     string getKeywordCloseTag ( unsigned int styleID );
 
+    /** @return Newline string */
+    string getNewLine();
+    
     /** convert an xterm color value (0-253) to 3 unsigned chars rgb
         @param color xterm color
         @param rgb RGB destination string */
@@ -98,6 +107,10 @@ private:
     
     // set true if "True Color" escape codes should be used instead of 256 color approximation
     bool use16mColours;
+    
+    string canvasColSeq;
+    
+    unsigned int canvasPadding;
 
     /// Flag to determine if colourtable is calculated
     static bool initialized;

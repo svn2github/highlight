@@ -73,6 +73,7 @@ install:
 		${DESTDIR}${examples_dir}swig \
 		${DESTDIR}${examples_dir}pandoc \
 		${DESTDIR}${examples_dir}json \
+		${DESTDIR}${examples_dir}pywal \
 		${DESTDIR}${examples_dir}langDefs-resources \
 		${DESTDIR}${examples_dir}css-themes
 		
@@ -102,6 +103,7 @@ install:
 	${INSTALL_DATA} ./extras/web_plugins/wordpress/* ${DESTDIR}${examples_dir}web_plugins/wordpress/
 	${INSTALL_DATA} ./extras/swig/* ${DESTDIR}${examples_dir}swig
 	${INSTALL_DATA} ./extras/pandoc/* ${DESTDIR}${examples_dir}pandoc
+	${INSTALL_DATA} ./extras/pywal/* ${DESTDIR}${examples_dir}pywal
 	${INSTALL_DATA} ./extras/json/* ${DESTDIR}${examples_dir}json
 	${INSTALL_DATA} ./extras/langDefs-resources/* ${DESTDIR}${examples_dir}langDefs-resources
 	${INSTALL_DATA} ./extras/css-themes/* ${DESTDIR}${examples_dir}css-themes
@@ -113,7 +115,7 @@ install:
 	@echo
 	@echo "Done."
 	@echo "Type highlight --help or man highlight for instructions."
-	@echo "Take a look at ${DESTDIR}${examples_dir} for plugins and SWIG and TCL language bindings."
+	@echo "Take a look at ${DESTDIR}${examples_dir} for web plugins, SWIG and TCL bindings."
 	@echo "Execute 'make install-gui' to install the highlight GUI ('make gui')."
 	@echo "Do not hesitate to report problems. Unknown bugs are hard to fix."
 
@@ -157,7 +159,7 @@ help:
 	@echo "(all)            Compile the command line interface."
 	@echo "lib-static       Compile only the static library."
 	@echo "lib-shared       Compile only the shared library."
-	@echo "gui              Compile the Qt (4.x/5.x) GUI."
+	@echo "gui              Compile the Qt (5.x) GUI."
 	@echo "install*         Copy all data files to ${data_dir}."
 	@echo "install-gui*     Copy GUI data files to ${data_dir}."
 	@echo "clean            Remove object files and binaries."

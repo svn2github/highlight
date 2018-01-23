@@ -26,6 +26,7 @@ root of highlight-x.x
 |   |-- pandoc          # Pandoc macros
 |   |-- tcl             # TCL extension
 |   |-- web_plugins     # plugins for various web toolkits
+|   |-- pywal           # pywal terminal colouring template
 |   `-- swig            # SWIG interface and sample code
 |-- gui_files           # supporting files for the optional GUI
 |   |-- ext             # file open filter configuration
@@ -216,7 +217,8 @@ See bug tracker items: https://bugs.launchpad.net/linuxmint/+bug/593583 and
                        https://bugs.launchpad.net/linuxmint/+bug/815005
                    
 
-OpenSUSE Leap 42.2 
+OpenSUSE Leap 42.2
+==================
 
 The lua-devel package installation causes error messages. 
 Workaround: ignore dependency conflict.

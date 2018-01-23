@@ -2,7 +2,7 @@
                           help.cpp  -  description
                              -------------------
     begin                : Die Apr 23 2002
-    copyright            : (C) 2002-2017 by Andre Simon
+    copyright            : (C) 2002-2018 by Andre Simon
     email                : andre.simon1@gmx.de
  ***************************************************************************/
 
@@ -78,9 +78,9 @@ void printHelp()
 
     cout<<" -f, --fragment                 omit document header and footer\n";
     cout<<" -F, --reformat=<style>         reformats and indents output in given style\n";
-    cout<<"                                  <style> = [allman, banner, gnu,\n";
-    cout<<"                                  horstmann, java, kr, linux, mozilla, otbs, vtk,\n";
-    cout<<"                                  stroustrup, whitesmith, google, pico, lisp]\n";
+    cout<<"                                  <style> = [allman, gnu, google, horstmann,\n";
+    cout<<"                                  java, kr, linux, lisp, mozilla, otbs, pico,\n";
+    cout<<"                                  vtk, ratliff, stroustrup, whitesmith]\n";
     cout<<" -I, --include-style            include style definition in output file\n";
     cout<<" -J, --line-length=<num>        line length before wrapping (see -V, -W)\n";
     cout<<" -j, --line-number-length=<num> line number width incl. left padding (default: 5)\n";
@@ -139,6 +139,11 @@ void printHelp()
     cout<<"\n";
     cout<<"     --height                   set image height (units allowed)\n";
     cout<<"     --width                    set image width (see --height)\n";
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"Terminal escape output options (xterm256 or truecolor):\n";
+    cout<<"\n";
+    cout<<"     --canvas[=width]           set background colour padding (default: 80)\n";
     cout<<"\n";
     cout<<"\n";
     cout<<"GNU source-highlight compatibility options:\n";

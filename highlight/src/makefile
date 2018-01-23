@@ -20,11 +20,11 @@ QMAKE=qmake
 
 # Added -std=c++11 because of auto_ptr to unique_ptr transition
 CFLAGS:=-Wall -O2 ${CFLAGS} -DNDEBUG -std=c++11
-#CFLAGS:=-ggdb ${CFLAGS}
+#CFLAGS:=-ggdb ${CFLAGS} -std=c++11
 
 CFLAGS_DILU=-fno-strict-aliasing
 
-SO_VERSION=3.41
+SO_VERSION=3.42
 
 
 # Source paths
@@ -108,7 +108,7 @@ lib-static libhighlight.a: ${CORE_OBJECTS}
 	${AR} ${ARFLAGS} libhighlight.a ${CORE_OBJECTS} ${DILU_OBJECTS}
 
 lib-shared libhighlight.so.1.0: ${CORE_OBJECTS}
-	ld -shared -soname libhighlight.so.1 -o libhighlight.so.${SO_VERSION} -lc ${CORE_OBJECTS}
+	${CXX} -shared -Wl,-soname,libhighlight.so.${SO_VERSION} -o libhighlight.so.${SO_VERSION} -lc ${CORE_OBJECTS}
 
 gui-qt: highlight-gui
 

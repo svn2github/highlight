@@ -1,6 +1,26 @@
 CHANGELOG Highlight
 
+highlight 3.42
 
+20.01.2018
+
+-fixed HL_OUTPUT in Lua state for HL_FORMAT_XHTML and HL_FORMAT_TRUECOLOR values
+-fixed lib-shared make target
+-updated astyle code to release 3.1.0 beta
+-added Polygen and EBNF2 syntax definitions (thanks to Tristano Ajmone)
+-added pywal terminal colouring template in extras/pywal
+-added reformatting style ratliff (replaces banner)
+-added extras/langDefs-resources/cleanslate.lang (thanks to Tristano Ajmone)
+-improved Perl6 compatibility
+-improved PHP string interpolation
+-improved Haskell definition (https://github.com/andre-simon/highlight/pull/52)
+-CLI: added --canvas option to define background color padding in ANSI output
+  (https://github.com/andre-simon/highlight/issues/40)
+-GUI: added French translation (thanks to Antoine Belvire) 
+-GUI: added Scripts tab (suggested by Tristano Ajmone) 
+-GUI: minor bugfixes
+
+---
 27.11.2017
 
 highlight 3.41
@@ -1303,7 +1323,7 @@ highlight 2.2-5
 -fixed indentation error in LaTeX output and output of "--" in bold font
   (thanks to Michael Suess)
 -added background colour attribute of body element to the CSS output to
-  improve compability with old browsers (NS Communicator 4.8)
+  improve compatibility with old browsers (NS Communicator 4.8)
   (thanks to Wojciech Stryjewski)
 -in CSS output, user defined CSS definitions are now included after highlight
   style definitions to make modifications easier
