@@ -46,12 +46,12 @@ Keywords={
         "winwaitactive", "winwaitclose", "winwaitnotactive"},
   },
 -- if :: follows, # is part of a hotkey
-  { Id=1,
-    Regex = [[\#\w+(?!\:\:)]]
-  },
   { Id=2,
-    Regex=[[ [\#\!\^\+\&\<\>\*\~\$]*[\w\&\s]+?\:\: ]],
+    Regex = [[(\#\w+?)\:\:]], Group=1
   },
+ -- { Id=2,
+ --   Regex=[[ [\#\!\^\+\&\<\>\*\~\$]*[\w\&\s]+?\:\: ]],
+ -- },
   { Id=3,
     Regex=[[%\w+?%]],
   },
@@ -62,6 +62,7 @@ Keywords={
 
 Strings={
   Delimiter=[["]],
+  Escape = [[ `[ntvbrfa\?"] ]],
 }
 
 IgnoreCase=true
@@ -75,3 +76,5 @@ Comments={
 Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\:|\&|<|>|\!|\=|\/|\*|\\|\`|%|\.|\+|\-]]
 
 EnableIndentation=true
+
+Digits = [[ (?:0x)[0-9a-fA-F']+|\d*[\.]?\d+(?:[eE]\d+)?[blLuU]* ]]

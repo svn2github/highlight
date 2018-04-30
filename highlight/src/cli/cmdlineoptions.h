@@ -111,6 +111,8 @@ along with Highlight.  If not, see <http://www.gnu.org/licenses/>.
 #define OPT_FORCE_STDOUT     "stdout"
 #define OPT_NO_VERSION_INFO  "no-version-info"
 #define OPT_CANVAS           "canvas"
+#define OPT_REFORMAT_OPT     "reformat-option"
+#define OPT_RANGE_OPT        "line-range"
 
 // Improve CLI option compatibility with GNU source-highlight
 #define OPT_COMPAT_DOC       "doc"
@@ -333,8 +335,12 @@ public:
     /** \return class name */
     const string& getClassName() const ;
 
+    /** \return list of plugin file paths */
     const vector <string> &getPluginPaths() const;
 
+    /** \return list of astyle options */
+    const vector <string> &getAStyleOptions() const;
+        
     /** \return True if trailing nl should be omitted */
     bool disableTrailingNL() const ;
 
@@ -365,6 +371,12 @@ public:
     /** \return ANSI background color padding width */
     int getCanvasPadding();
     
+    /** \return line range start */
+    int getLineRangeStart();
+    
+    /** \return line range end (number of lines starting from getLineRangeStart() ) */
+    int getLineRangeEnd();
+    
     /** \return Keyword Case (upper, lower, unchanged) */
     StringTools::KeywordCase getKeywordCase() const;
 
@@ -380,6 +392,9 @@ private:
     int lineNrWidth;    // width of line number (left padding)
     int lineLength;    // length of line before wrapping
     int lineNrStart;    // line number start count
+    int lineRangeStart;    // line range start 
+    int lineRangeEnd;    // line range end
+
     unsigned int canvasPaddingWidth;    // line number start count
 
     highlight::WrapMode wrappingStyle; // line wrapping mode
@@ -461,6 +476,9 @@ private:
     /** list of plugin file names */
     vector <string> userPlugins;
 
+    /** list of additional Artistic Style options */
+    vector <string> astyleOptions;
+    
     /** list of file types which should be ignored */
     set <string> ignoredFileTypes;
 
